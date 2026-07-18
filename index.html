@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaibhav Patil | Backend Developer & Python Engineer Portfolio</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Professional portfolio of Vaibhav Patil, a Backend Developer and Python Engineer specializing in Flask, PostgreSQL, Machine Learning, and RESTful APIs.">
+    <meta name="keywords"
+        content="Vaibhav Patil, Backend Developer, Python Developer, Software Engineer, Portfolio, Flask, PostgreSQL, Machine Learning, Pune">
+    <meta name="author" content="Vaibhav Patil">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Vaibhav Patil | Backend Developer & Python Engineer">
+    <meta property="og:description"
+        content="Explore the portfolio of Vaibhav Patil, showcasing backend engineering, Python applications, and machine learning projects.">
+    <meta property="og:image" content="assets/og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Vaibhav Patil | Backend Developer">
+    <meta property="twitter:description"
+        content="Explore the portfolio of Vaibhav Patil, showcasing backend engineering, Python applications, and machine learning projects.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Main Style Sheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Grid Background Decoration -->
+    <div class="grid-bg"></div>
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="nav-container container">
+            <a href="#hero" class="logo" id="nav-logo">
+                <span>V</span>P<span>.</span>
+            </a>
+
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="#about" class="nav-link" id="link-about">About</a></li>
+                    <li><a href="#skills" class="nav-link" id="link-skills">Skills</a></li>
+                    <li><a href="#experience" class="nav-link" id="link-experience">Experience</a></li>
+                    <li><a href="#projects" class="nav-link" id="link-projects">Projects</a></li>
+                    <li><a href="#certifications" class="nav-link" id="link-certifications">Certificates</a></li>
+                    <li><a href="#contact" class="nav-link" id="link-contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <!-- Theme Toggle Button -->
+                <button class="theme-btn" id="theme-toggle" aria-label="Toggle light/dark theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+
+                <!-- Download Resume (Triggers dynamic clean PDF view/print) -->
+                <button class="btn btn-secondary nav-resume-btn" id="resume-download-btn">Resume</button>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-toggle-btn" id="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section" id="hero">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <div class="badge-tag animated-fade">Available for Opportunities</div>
+                    <h1 class="hero-title">
+                        Hi, I'm <span class="text-gradient">Vaibhav Patil</span>
+                    </h1>
+                    <h2 class="hero-subtitle">
+                        I build <span class="typewriter-text" id="typewriter"></span>
+                    </h2>
+                    <p class="hero-description">
+                        Backend Engineer specializing in Python, Flask, SQL/NoSQL databases, and building robust,
+                        scalable APIs. Experienced in integrating machine learning concepts to optimize system logic.
+                    </p>
+
+                    <div class="hero-ctas">
+                        <a href="#projects" class="btn btn-primary" id="hero-btn-work">Explore Work</a>
+                        <a href="#contact" class="btn btn-outline" id="hero-btn-contact">Let's Talk</a>
+                    </div>
+
+                    <div class="hero-socials">
+                        <a href="https://github.com/vaibhavpatil29" target="_blank" rel="noopener noreferrer"
+                            class="social-icon" id="hero-github" aria-label="GitHub Profile">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                </path>
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/vaibhavpatil29v/" target="_blank" rel="noopener noreferrer"
+                            class="social-icon" id="hero-linkedin" aria-label="LinkedIn Profile">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                </path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                        <a href="mailto:vaibhav292005v@gmail.com" class="social-icon" id="hero-email"
+                            aria-label="Send Email">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <!-- Glassmorphic tech abstract graphic representing backend data/pipelines -->
+                    <div class="visual-card">
+                        <div class="visual-header">
+                            <div class="dot red"></div>
+                            <div class="dot yellow"></div>
+                            <div class="dot green"></div>
+                            <span class="visual-title">server.py</span>
+                        </div>
+                        <div class="visual-body">
+                            <pre><code><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, jsonify
+<span class="keyword">import</span> database
+
+app = Flask(__name__)
+
+<span class="decorator">@app.route</span>(<span class="string">"/api/v1/status"</span>)
+<span class="keyword">def</span> <span class="function">get_status</span>():
+    <span class="keyword">return</span> jsonify({
+        <span class="string">"developer"</span>: <span class="string">"Vaibhav Patil"</span>,
+        <span class="string">"role"</span>: <span class="string">"Backend Engineer"</span>,
+        <span class="string">"status"</span>: <span class="string">"active"</span>,
+        <span class="string">"db_connected"</span>: <span class="keyword">True</span>
+    })</code></pre>
+                        </div>
+                    </div>
+                    <div class="database-card">
+                        <div class="db-node"><svg width="18" height="18" fill="none" stroke="currentColor"
+                                stroke-width="2" viewBox="0 0 24 24">
+                                <path d="M4 7V4h16v3M4 12V9h16v3M4 17v-3h16v3M4 20h16"></path>
+                            </svg> PostgreSQL</div>
+                        <div class="db-connector"></div>
+                        <div class="db-node"><svg width="18" height="18" fill="none" stroke="currentColor"
+                                stroke-width="2" viewBox="0 0 24 24">
+                                <path
+                                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                                </path>
+                            </svg> Machine Learning</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section scroll-reveal" id="about">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-grid">
+                    <div class="about-info">
+                        <h3>Passionate about Backend Systems & Intelligent Algorithms</h3>
+                        <p>
+                            I am a Computer Science engineering student at <strong>Pimpri Chinchwad University,
+                                Pune</strong>, with a focus on designing, developing, and deploying robust server-side
+                            infrastructures. Over the course of my academic journey and internships, I've developed a
+                            deep affinity for building RESTful APIs, securing applications, and implementing database
+                            solutions.
+                        </p>
+                        <p>
+                            With hands-on experience in Python frameworks like <strong>Flask</strong>, databases such as
+                            <strong>PostgreSQL</strong>, and real-time communications using <strong>WebSockets</strong>,
+                            I bridge the gap between complex software requirements and performance-optimized execution.
+                        </p>
+                        <p>
+                            I also apply Machine Learning concepts to build smarter, data-driven systems, which
+                            culminated in a research paper presentation at the IEEE I3CTCON 2026 conference.
+                        </p>
+
+                        <div class="about-stats">
+                            <div class="stat-card">
+                                <span class="stat-number">2+</span>
+                                <span class="stat-label">Internships Done</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-number">2</span>
+                                <span class="stat-label">Major Projects</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-number">1</span>
+                                <span class="stat-label">IEEE Research Paper</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-details">
+                        <div class="details-card">
+                            <h4 class="details-title">Quick Information</h4>
+                            <ul class="details-list">
+                                <li>
+                                    <strong>Education:</strong>
+                                    <span>B.Tech in Computer Science<br><small class="text-muted">Pimpri Chinchwad
+                                            University, Pune (2023 - Present)</small></span>
+                                </li>
+                                <li>
+                                    <strong>Primary Location:</strong>
+                                    <span>Pune, Maharashtra, India</span>
+                                </li>
+                                <li>
+                                    <strong>Home Town:</strong>
+                                    <span>Jalgaon, Maharashtra, India</span>
+                                </li>
+                                <li>
+                                    <strong>Languages Spoken:</strong>
+                                    <span>English, Hindi, Marathi, German</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="skills-section scroll-reveal" id="skills">
+            <div class="container">
+                <h2 class="section-title">Technical Expertise</h2>
+                <p class="section-subtitle">Categorized technologies and tools I work with on a regular basis.</p>
+
+                <div class="skills-grid">
+                    <!-- Languages -->
+                    <div class="skill-category-card">
+                        <div class="skill-category-header">
+                            <div class="category-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                                </svg>
+                            </div>
+                            <h3>Languages</h3>
+                        </div>
+                        <ul class="skill-list">
+                            <li>
+                                <div class="skill-name">Python <span class="proficiency">Proficient</span></div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 95%;"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="skill-name">Java <span class="proficiency">Intermediate</span></div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 75%;"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="skill-name">SQL <span class="proficiency">Proficient</span></div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 90%;"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Backend Development -->
+                    <div class="skill-category-card">
+                        <div class="skill-category-header">
+                            <div class="category-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+                                </svg>
+                            </div>
+                            <h3>Backend</h3>
+                        </div>
+                        <ul class="skill-list">
+                            <li>
+                                <div class="skill-name">Flask / Flask-SocketIO</div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 92%;"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="skill-name">Node.js / Express</div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 70%;"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="skill-name">RESTful APIs Architecture</div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 90%;"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="skill-name">SQLAlchemy (ORM)</div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 88%;"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Databases -->
+                    <div class="skill-category-card">
+                        <div class="skill-category-header">
+                            <div class="category-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 7v10c0 2.21 3.58 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.58 4 8 4s8-1.79 8-4M4 7c0-2.21 3.58-4 8-4s8 1.79 8 4m0 5c0 2.21-3.58 4-8 4s-8-1.79-8-4" />
+                                </svg>
+                            </div>
+                            <h3>Databases</h3>
+                        </div>
+                        <ul class="skill-list">
+                            <li>
+                                <div class="skill-name">PostgreSQL</div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 90%;"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="skill-name">MySQL</div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 85%;"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="skill-name">MongoDB</div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 75%;"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- AI & Machine Learning -->
+                    <div class="skill-category-card">
+                        <div class="skill-category-header">
+                            <div class="category-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                                </svg>
+                            </div>
+                            <h3>AI / ML</h3>
+                        </div>
+                        <ul class="skill-list">
+                            <li>
+                                <div class="skill-name">Pandas / NumPy</div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 88%;"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="skill-name">Machine Learning Models</div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 82%;"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="skill-name">Data Preprocessing & Feature Eng.</div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 85%;"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Tools & Platforms -->
+                    <div class="skill-category-card">
+                        <div class="skill-category-header">
+                            <div class="category-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                            </div>
+                            <h3>Tools & Systems</h3>
+                        </div>
+                        <ul class="skill-list">
+                            <li>
+                                <div class="skill-name">Git & GitHub</div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 90%;"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="skill-name">VS Code / Dev Environments</div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 95%;"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="skill-name">OpenStack / Cloud Management</div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 70%;"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Frontend (Secondary) -->
+                    <div class="skill-category-card">
+                        <div class="skill-category-header">
+                            <div class="category-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <h3>Frontend & UI</h3>
+                        </div>
+                        <ul class="skill-list">
+                            <li>
+                                <div class="skill-name">HTML5 / CSS3</div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 85%;"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="skill-name">Bootstrap Framework</div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 80%;"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="skill-name">Responsive Design</div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 85%;"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="experience-section scroll-reveal" id="experience">
+            <div class="container">
+                <h2 class="section-title">Work Experience</h2>
+
+                <div class="timeline">
+                    <!-- Experience Item 1 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Jul 2025 – Aug 2025</div>
+                        <div class="timeline-content card">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3>Python Developer Intern</h3>
+                                    <h4 class="company">Pinnacle Labs</h4>
+                                </div>
+                                <span class="location">Kolkata, India (Remote)</span>
+                            </div>
+                            <ul class="experience-details">
+                                <li>Built and shipped core backend features for 2 production applications, including a
+                                    full-scale e-commerce platform and a real-time chat system using Flask.</li>
+                                <li>Architected RESTful APIs and integrated PostgreSQL databases using SQLAlchemy ORM,
+                                    increasing database access consistency and reducing query execution times by 20%.
+                                </li>
+                                <li>Implemented secure token authentication, session management, and role-based access
+                                    control (RBAC), securing 3 critical workflows for multi-user interfaces.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Experience Item 2 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">May 2025 – Jul 2025</div>
+                        <div class="timeline-content card">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3>AI / ML Intern</h3>
+                                    <h4 class="company">Blackbucks Group (BlackBuck Engineers)</h4>
+                                </div>
+                                <span class="location">Hyderabad, India (Remote)</span>
+                            </div>
+                            <ul class="experience-details">
+                                <li>Trained, tuned, and evaluated machine learning classification and regression models,
+                                    achieving 85% predictive accuracy on structured tabular datasets.</li>
+                                <li>Conducted extensive exploratory data analysis (EDA), data cleaning, handling of
+                                    missing variables, and feature engineering to enhance model generalization.</li>
+                                <li>Delivered data-driven ML insights using Pandas and NumPy, which supported the
+                                    development of production-ready analytical dashboards.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects-section scroll-reveal" id="projects">
+            <div class="container">
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Real-world applications showcasing system architectures, API designs, and
+                    algorithm integrations.</p>
+
+                <div class="projects-grid">
+                    <!-- Project Card 1 -->
+                    <div class="project-card card" id="project-urbancool">
+                        <div class="project-banner">
+                            <div class="project-tag">AI & Environment</div>
+                            <div class="project-tech-badges">
+                                <span class="badge">Python</span>
+                                <span class="badge">Streamlit</span>
+                                <span class="badge">Machine Learning</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>UrbanCool – AI-Driven Responsive Cooling</h3>
+                            <p>An intelligent simulation prototype addressing urban heat effects by processing real-time
+                                IoT, weather, and crowd-density data to suggest zone-specific cooling actions.</p>
+                            <div class="project-actions">
+                                <button class="btn btn-sm btn-outline open-modal-btn" data-project="urbancool">Case
+                                    Study</button>
+                                <a href="https://github.com/vaibhavpatil29/UrbanCool" target="_blank"
+                                    rel="noopener noreferrer" class="btn-link">
+                                    GitHub
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path
+                                            d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2 -->
+                    <div class="project-card card" id="project-chatapp">
+                        <div class="project-banner">
+                            <div class="project-tag">Real-Time Web</div>
+                            <div class="project-tech-badges">
+                                <span class="badge">Flask</span>
+                                <span class="badge">Flask-SocketIO</span>
+                                <span class="badge">WebSockets</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>ChatApp – Real-Time Messaging App</h3>
+                            <p>A multi-user instant messaging web service that leverages WebSocket channels for
+                                bi-directional communication, sub-second message propagation, and concurrent room
+                                states.</p>
+                            <div class="project-actions">
+                                <button class="btn btn-sm btn-outline open-modal-btn" data-project="chatapp">Case
+                                    Study</button>
+                                <a href="https://github.com/vaibhavpatil29/real-time-chat-app" target="_blank"
+                                    rel="noopener noreferrer" class="btn-link">
+                                    GitHub
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path
+                                            d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications & Publications Section -->
+        <section class="certifications-section scroll-reveal" id="certifications">
+            <div class="container">
+                <div class="certifications-grid">
+                    <!-- Publications -->
+                    <div class="publications-column">
+                        <h2 class="section-title text-left">Publications</h2>
+                        <div class="publication-card card">
+                            <div class="pub-badge">IEEE Paper</div>
+                            <h3>"AI for Environmental Management: UrbanCool AI Driven Responsive Cooling System"</h3>
+                            <p class="pub-authors">Vaibhav Patil, et al.</p>
+                            <p class="pub-venue">Presented and Published at IEEE I3CTCON 2026</p>
+                            <p class="pub-desc">
+                                Co-authored research outlining machine learning intervention models that forecast urban
+                                cooling loads based on crowd spatial data and climatic IoT sensors, achieving 15%
+                                reduction in mock energy consumption.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Certifications -->
+                    <div class="certs-column">
+                        <h2 class="section-title text-left">Certifications</h2>
+                        <div class="certs-list">
+                            <div class="cert-item card">
+                                <div class="cert-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                                    </svg>
+                                </div>
+                                <div class="cert-info">
+                                    <h4>IBM Machine Learning Certificate</h4>
+                                    <p>Coursera, 2026</p>
+                                </div>
+                            </div>
+
+                            <div class="cert-item card">
+                                <div class="cert-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                                    </svg>
+                                </div>
+                                <div class="cert-info">
+                                    <h4>Red Hat OpenStack Certification</h4>
+                                    <p>Red Hat Platform</p>
+                                </div>
+                            </div>
+
+                            <div class="cert-item card">
+                                <div class="cert-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                                    </svg>
+                                </div>
+                                <div class="cert-info">
+                                    <h4>Walmart USA - Software Eng Simulation</h4>
+                                    <p>Forage Job Simulation</p>
+                                </div>
+                            </div>
+
+                            <div class="cert-item card">
+                                <div class="cert-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                                    </svg>
+                                </div>
+                                <div class="cert-info">
+                                    <h4>Oracle Cloud Data Management</h4>
+                                    <p>Oracle University</p>
+                                </div>
+                            </div>
+
+                            <div class="cert-item card">
+                                <div class="cert-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                                    </svg>
+                                </div>
+                                <div class="cert-info">
+                                    <h4>Generative AI Career Essentials</h4>
+                                    <p>Microsoft and LinkedIn</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section scroll-reveal" id="contact">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Have a question or want to work together? Drop a message!</p>
+
+                <div class="contact-grid">
+                    <!-- Contact Information -->
+                    <div class="contact-info-panel">
+                        <h3>Contact Information</h3>
+                        <p class="contact-intro">Feel free to reach out via email, phone, or connect directly through
+                            social channels.</p>
+
+                        <div class="contact-details-list">
+                            <a href="mailto:vaibhav292005v@gmail.com" class="contact-detail-item card">
+                                <div class="detail-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2">
+                                        <path
+                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                        </path>
+                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                    </svg>
+                                </div>
+                                <div class="detail-text">
+                                    <span class="label">Email Me</span>
+                                    <span class="value">vaibhav292005v@gmail.com</span>
+                                </div>
+                            </a>
+
+                            <a href="tel:+919970231181" class="contact-detail-item card">
+                                <div class="detail-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2">
+                                        <path
+                                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div class="detail-text">
+                                    <span class="label">Call Me</span>
+                                    <span class="value">+91 9970231181</span>
+                                </div>
+                            </a>
+
+                            <div class="contact-detail-item card">
+                                <div class="detail-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                        <circle cx="12" cy="10" r="3"></circle>
+                                    </svg>
+                                </div>
+                                <div class="detail-text">
+                                    <span class="label">Location</span>
+                                    <span class="value">Pune, Maharashtra, India</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="contact-form-panel card">
+                        <form id="contact-form">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" name="name" placeholder="John Doe" required>
+                                <span class="error-msg" id="name-error">Please enter your name.</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Your Email</label>
+                                <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                                <span class="error-msg" id="email-error">Please enter a valid email address.</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" placeholder="Project Discussion"
+                                    required>
+                                <span class="error-msg" id="subject-error">Please enter a subject.</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5"
+                                    placeholder="Hey Vaibhav, I would love to talk about..." required></textarea>
+                                <span class="error-msg" id="message-error">Please write your message.</span>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-block" id="form-submit-btn">
+                                <span class="btn-text">Send Message</span>
+                                <span class="btn-spinner hidden"></span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="#hero" class="logo"><span>V</span>P<span>.</span></a>
+                <p>Backend Developer dedicated to writing clean code, building scalable systems, and resolving complex
+                    database structures.</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Sitemap</h4>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-socials-col">
+                <h4>Connect</h4>
+                <div class="footer-socials">
+                    <a href="https://github.com/vaibhavpatil29" target="_blank" rel="noopener noreferrer"
+                        aria-label="GitHub"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                            </path>
+                        </svg></a>
+                    <a href="https://www.linkedin.com/in/vaibhavpatil29v/" target="_blank" rel="noopener noreferrer"
+                        aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                            </path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg></a>
+                    <a href="mailto:vaibhav292005v@gmail.com" aria-label="Email"><svg xmlns="http://www.w3.org/2000/svg"
+                            width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Vaibhav Patil. All rights reserved.</p>
+            <button class="back-to-top" id="scroll-to-top" aria-label="Scroll to top">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor"
+                    stroke-width="2" viewBox="0 0 24 24">
+                    <polyline points="18 15 12 9 6 15"></polyline>
+                </svg>
+            </button>
+        </div>
+    </footer>
+
+    <!-- Project Detail Modal -->
+    <div class="modal-overlay" id="project-modal">
+        <div class="modal-card">
+            <button class="modal-close-btn" id="modal-close" aria-label="Close modal">&times;</button>
+            <div class="modal-body" id="modal-content">
+                <!-- Content injected dynamically via script.js -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Form Success Toast Notification -->
+    <div class="toast" id="toast-notification">
+        <div class="toast-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
+                stroke-width="2" viewBox="0 0 24 24">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+        </div>
+        <div class="toast-content">
+            <h4>Message Sent!</h4>
+            <p>Thank you, I will get back to you shortly.</p>
+        </div>
+    </div>
+
+    <!-- Main JavaScript File -->
+    <script src="script.js"></script>
+</body>
+
+</html>
