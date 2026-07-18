@@ -682,6 +682,42 @@ section {
     color: #F59E0B;
 }
 
+/* Light Theme Code Graphic overrides */
+[data-theme="light"] .visual-card {
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    box-shadow: var(--shadow-lg), 0 20px 40px rgba(15, 23, 42, 0.08);
+}
+
+[data-theme="light"] .visual-header {
+    background: rgba(241, 245, 249, 0.95);
+    border-bottom: 1px solid rgba(15, 23, 42, 0.05);
+}
+
+[data-theme="light"] .visual-title {
+    color: var(--text-secondary);
+}
+
+[data-theme="light"] .visual-body {
+    color: #24292E;
+}
+
+[data-theme="light"] .keyword {
+    color: #D73A49;
+}
+
+[data-theme="light"] .string {
+    color: #032F62;
+}
+
+[data-theme="light"] .function {
+    color: #6F42C1;
+}
+
+[data-theme="light"] .decorator {
+    color: #E36209;
+}
+
 /* Database Floating Nodes */
 .database-card {
     display: flex;
@@ -1058,10 +1094,22 @@ section {
         linear-gradient(135deg, rgba(11, 17, 30, 0.8) 0%, rgba(17, 26, 46, 0.9) 100%);
 }
 
+[data-theme="light"] #project-urbancool .project-banner {
+    background-image:
+        radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.12) 0%, transparent 50%),
+        linear-gradient(135deg, rgba(241, 245, 249, 0.9) 0%, rgba(226, 232, 240, 0.9) 100%);
+}
+
 #project-chatapp .project-banner {
     background-image:
         radial-gradient(circle at 80% 20%, rgba(96, 165, 250, 0.15) 0%, transparent 50%),
         linear-gradient(135deg, rgba(11, 17, 30, 0.8) 0%, rgba(17, 26, 46, 0.9) 100%);
+}
+
+[data-theme="light"] #project-chatapp .project-banner {
+    background-image:
+        radial-gradient(circle at 80% 20%, rgba(2, 132, 199, 0.12) 0%, transparent 50%),
+        linear-gradient(135deg, rgba(241, 245, 249, 0.9) 0%, rgba(226, 232, 240, 0.9) 100%);
 }
 
 .project-tag {
@@ -1072,6 +1120,10 @@ section {
     font-size: 0.75rem;
     font-weight: 600;
     color: var(--text-secondary);
+}
+
+[data-theme="light"] .project-tag {
+    background: rgba(15, 23, 42, 0.06);
 }
 
 .project-tech-badges {
