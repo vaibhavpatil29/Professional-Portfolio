@@ -1,8 +1,13 @@
 /**
  * Vaibhav Patil - Professional Portfolio Script
  * Handles Theme Toggling, Typing Animation, Scroll Highlights, Modal management,
- * and Form validation with simulated API delays.
+ * and Form validation with Formspree integration.
  */
+
+// GETFORM / FORMSPREE CONFIGURATION:
+// Put your Getform.io Form ID (e.g., "dxoj8hnzw8w") or Formspree ID here to receive submissions.
+// Leave it empty "" to run in offline/simulation mode saving to localStorage.
+const FORM_ENDPOINT_ID = "dxoj8hnzw8w";
 
 document.addEventListener('DOMContentLoaded', () => {
     
@@ -344,11 +349,29 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Attach real-time input change listener to reset error highlights
-    const formFields = contactForm.querySelectorAll('input, textarea');
+    const formFields = contactForm.querySelectorAll('input:not([type="file"]), textarea');
     formFields.forEach(field => {
         field.addEventListener('input', () => {
             showInputError(field, null, false);
         });
+    });
+
+    // Attachment File Name Display logic
+    const attachmentField = document.getElementById('attachment');
+    const fileNameDisplay = document.getElementById('file-name-display');
+    const fileLabelText = document.getElementById('file-label-text');
+
+    attachmentField.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            fileNameDisplay.textContent = `Selected File: ${file.name} (${(file.size / 1024).toFixed(1)} KB)`;
+            fileNameDisplay.classList.remove('hidden');
+            fileLabelText.textContent = "Change File";
+        } else {
+            fileNameDisplay.textContent = "No file chosen";
+            fileNameDisplay.classList.add('hidden');
+            fileLabelText.textContent = "Choose file or drag here";
+        }
     });
 
     contactForm.addEventListener('submit', (e) => {
@@ -392,28 +415,19 @@ document.addEventListener('DOMContentLoaded', () => {
         submitBtnText.textContent = "Sending...";
         submitBtnSpinner.classList.remove('hidden');
 
-        // Simulate API post call saving data to localStorage
-        setTimeout(() => {
-            const messageData = {
-                name: nameField.value.trim(),
-                email: emailField.value.trim(),
-                subject: subjectField.value.trim(),
-                message: messageField.value.trim(),
-                timestamp: new Date().toISOString()
-            };
-
-            // Save message log locally
-            const existingMessages = JSON.parse(localStorage.getItem('contact_messages') || '[]');
-            existingMessages.push(messageData);
-            localStorage.setItem('contact_messages', JSON.stringify(existingMessages));
-
-            // Reset loading state
+        // Success state handler
+        const handleSuccess = () => {
             submitBtn.disabled = false;
             submitBtnText.textContent = "Send Message";
             submitBtnSpinner.classList.add('hidden');
 
             // Reset form input values
             contactForm.reset();
+
+            // Reset file upload display states
+            fileNameDisplay.textContent = "No file chosen";
+            fileNameDisplay.classList.add('hidden');
+            fileLabelText.textContent = "Choose file or drag here";
 
             // Display Toast notification
             toast.classList.add('show');
@@ -422,18 +436,80 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 toast.classList.remove('show');
             }, 4000);
+        };
 
-        }, 1500);
+        if (FORM_ENDPOINT_ID && FORM_ENDPOINT_ID.trim() !== "") {
+            // Extract form ID if user provided the full URL instead of just the ID hash
+            let formId = FORM_ENDPOINT_ID.trim();
+            let baseUrl = "https://getform.io/f/";
+
+            if (formId.includes('getform.io/f/')) {
+                formId = formId.split('getform.io/f/')[1];
+            } else if (formId.includes('formspree.io/f/')) {
+                formId = formId.split('formspree.io/f/')[1];
+                baseUrl = "https://formspree.io/f/";
+            } else if (FORM_ENDPOINT_ID.trim().length <= 8) {
+                // Formspree IDs are usually short (8 chars), Getform IDs are longer (11-12 chars)
+                baseUrl = "https://formspree.io/f/";
+            }
+
+            // Create a FormData object containing all inputs (including file streams)
+            const formData = new FormData(contactForm);
+
+            // Actual email dispatch
+            fetch(`${baseUrl}${formId}`, {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json'
+                },
+                body: formData
+            })
+            .then(async response => {
+                if (response.ok) {
+                    handleSuccess();
+                } else {
+                    const errText = await response.text();
+                    alert(`Submission Failed (Status ${response.status}): ${errText || 'Please verify your form settings.'}`);
+                    submitBtn.disabled = false;
+                    submitBtnText.textContent = "Send Message";
+                    submitBtnSpinner.classList.add('hidden');
+                }
+            })
+            .catch(error => {
+                alert(`Network Connection Error: ${error.message || error}`);
+                submitBtn.disabled = false;
+                submitBtnText.textContent = "Send Message";
+                submitBtnSpinner.classList.add('hidden');
+            });
+        } else {
+            // Simulate API post call saving data to localStorage
+            setTimeout(() => {
+                const messageData = {
+                    name: nameField.value.trim(),
+                    email: emailField.value.trim(),
+                    subject: subjectField.value.trim(),
+                    message: messageField.value.trim(),
+                    attachment: attachmentField.files[0] ? {
+                        name: attachmentField.files[0].name,
+                        size: `${(attachmentField.files[0].size / 1024).toFixed(1)} KB`
+                    } : null,
+                    timestamp: new Date().toISOString()
+                };
+
+                // Save message log locally
+                const existingMessages = JSON.parse(localStorage.getItem('contact_messages') || '[]');
+                existingMessages.push(messageData);
+                localStorage.setItem('contact_messages', JSON.stringify(existingMessages));
+
+                handleSuccess();
+            }, 1500);
+        }
     });
 
     /* ==========================================================================
        RESUME & SCROLL TO TOP UTILITIES
        ========================================================================== */
-    // Resume Print Setup
-    const resumeBtn = document.getElementById('resume-download-btn');
-    resumeBtn.addEventListener('click', () => {
-        window.print();
-    });
+    // Resume download is handled natively by the HTML anchor tag link.
 
     // Scroll to Top Button
     const scrollToTopBtn = document.getElementById('scroll-to-top');

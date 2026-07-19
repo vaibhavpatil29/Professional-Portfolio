@@ -1373,6 +1373,63 @@ section {
     display: block;
 }
 
+/* File Upload Styles */
+.file-upload-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.file-upload-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.file-upload-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    width: 100%;
+    padding: 0.85rem 1.25rem;
+    background-color: var(--bg-secondary);
+    border: 1px dashed var(--card-border);
+    border-radius: var(--border-radius-sm);
+    color: var(--text-secondary);
+    transition: var(--transition-smooth);
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.file-upload-wrapper:hover .file-upload-trigger {
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+    background-color: rgba(0, 242, 254, 0.02);
+}
+
+[data-theme="light"] .file-upload-wrapper:hover .file-upload-trigger {
+    background-color: rgba(2, 132, 199, 0.02);
+}
+
+.file-name-display {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--accent-primary);
+    margin-top: 0.5rem;
+    font-weight: 600;
+    word-break: break-all;
+    transition: var(--transition-smooth);
+}
+
+.file-name-display.hidden {
+    display: none;
+}
+
 /* ==========================================================================
    FOOTER
    ========================================================================== */
